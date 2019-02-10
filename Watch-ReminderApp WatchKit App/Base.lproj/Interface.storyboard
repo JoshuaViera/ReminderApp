@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch_ReminderApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="RPY-KH-UoP">
+                            <items>
+                                <tableRow identifier="RowController" id="zaG-jY-lnl" customClass="RowController" customModule="Watch_ReminderApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="152" alignment="left" id="qoW-KP-bAO">
+                                        <items>
+                                            <group width="1" height="113" alignment="left" id="9P8-HZ-sdf">
+                                                <items>
+                                                    <label width="125" height="60" alignment="left" text="Label" id="S0m-Rm-ziX"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="S0m-Rm-ziX" id="kpw-Ve-ole"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="RPY-KH-UoP" id="he2-0Y-RMk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345.5"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="mZE-RN-Vx1">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="F65-vr-Hq9" customClass="DetailInterfaceController" customModule="Watch_ReminderApp_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="146" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="t3z-V9-fiq"/>
+                    </items>
+                    <connections>
+                        <outlet property="detailLabel" destination="t3z-V9-fiq" id="vX2-JX-Mkz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="598" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Watch_ReminderApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="1177"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Watch_ReminderApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="643"/>
+        </scene>
+    </scenes>
+</document>
